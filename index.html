@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0a0608">
+  <title>Our Story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>try{if(localStorage.getItem("os-motion")==="reduced")document.documentElement.dataset.motion="reduced"}catch(e){}</script>
+</head>
+<body>
+  <div class="scene" id="scene" aria-hidden="true">
+    <span class="orb orb--wine" style="width:46rem;height:46rem;top:-14%;left:-10%"></span>
+    <span class="orb orb--rose" style="width:30rem;height:30rem;top:34%;left:60%"></span>
+    <span class="orb orb--gold" style="width:24rem;height:24rem;top:64%;left:6%"></span>
+    <span class="orb orb--wine" style="width:34rem;height:34rem;top:52%;left:42%"></span>
+    <div class="vignette"></div><div class="grain"></div>
+  </div>
+
+  <!-- 1. The Secret Gate -->
+  <main id="screen-gate" class="screen" hidden>
+    <p class="eyebrow" dir="ltr">Our Story</p>
+    <div class="gold-rule"></div>
+    <h1 class="display gate-title" dir="ltr" lang="en"><span id="gate-en-1"></span><br><em id="gate-en-2"></em></h1>
+    <p class="gate-ar" id="gate-ar"></p>
+    <form id="gate-form" novalidate>
+      <label for="gate-date" class="display" dir="ltr" lang="en" id="gate-question"></label>
+      <p class="muted small" id="gate-hint"></p>
+      <div id="gate-field-wrap"><input id="gate-date" class="field" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" dir="ltr" maxlength="40" placeholder="DD / MM / YYYY" aria-describedby="gate-hint gate-msg"></div>
+      <p id="gate-msg" class="msg" role="status" aria-live="polite"></p>
+      <button type="submit" class="btn-primary display" dir="ltr" lang="en">Enter Our Story</button>
+    </form>
+  </main>
+
+  <!-- 2. رسالة زياد -->
+  <main id="screen-message" class="screen" hidden>
+    <p id="typed" class="typed" aria-live="polite"></p>
+    <div id="msg-question" hidden>
+      <h1 id="msg-question-text" class="rose-text" tabindex="-1"></h1>
+      <div class="btn-row">
+        <button type="button" class="btn-primary" id="btn-yes">أيوه، عايزة أكمل ❤️</button>
+        <button type="button" class="btn-ghost" id="btn-thinking">لسه بفكر 🙈</button>
+      </div>
+    </div>
+    <div id="msg-thinking" hidden>
+      <p class="rose-text" id="thinking-text" role="status"></p>
+      <div class="btn-row">
+        <button type="button" class="btn-primary" id="btn-back">ارجعي للسؤال</button>
+        <button type="button" class="btn-ghost" id="btn-later">هكمل بعدين</button>
+      </div>
+    </div>
+    <div id="msg-later" hidden>
+      <p class="rose-text" id="later-text" role="status"></p>
+      <button type="button" class="btn-ghost" id="btn-reopen">رجعت، افتحي من الأول</button>
+    </div>
+  </main>
+
+  <div id="cinema" class="cinema" hidden><span class="bloom"></span><p class="display" id="cinema-text" dir="ltr" lang="en"></p></div>
+
+  <!-- 3. الموقع الكامل -->
+  <div id="screen-home" hidden>
+    <header class="nav-shell">
+      <nav class="nav" aria-label="التنقل الرئيسي">
+        <a href="#home" class="display brand" dir="ltr" lang="en">Our Story</a>
+        <ul class="nav-links" dir="ltr" lang="en" id="nav-links">
+          <li><a href="#home">Home</a></li><li><a href="#story">Our Story</a></li><li><a href="#memories">Memories</a></li>
+          <li><a href="#letters">Love Letters</a></li><li><a href="#birthday">Birthday</a></li><li><a href="#future">Our Future</a></li>
+        </ul>
+        <button type="button" class="icon-btn menu-btn" id="menu-btn" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobile-menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+        </button>
+      </nav>
+      <ul id="mobile-menu" class="mobile-menu" dir="ltr" lang="en" hidden></ul>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div id="hero-art" aria-hidden="true"></div>
+        <div class="hero-inner">
+          <p class="eyebrow" dir="ltr">Our Little Universe</p>
+          <h1 class="display hero-title" dir="ltr" lang="en"><span id="hero-1"></span><br><em id="hero-2"></em></h1>
+          <p class="hero-sub" id="hero-sub"></p>
+          <a href="#story" class="btn-primary display" dir="ltr" lang="en">Explore Our Story</a>
+        </div>
+      </section>
+
+      <section id="story" class="section">
+        <div class="wrap narrow reveal">
+          <p class="eyebrow" dir="ltr">Our Story</p><h2>حكايتنا</h2><div class="gold-rule"></div>
+          <p class="lead" id="story-intro"></p>
+        </div>
+        <ol class="timeline wrap narrow" id="timeline"></ol>
+      </section>
+
+      <section id="memories" class="section">
+        <div class="wrap reveal">
+          <p class="eyebrow" dir="ltr">Our Memories</p><h2>ذكرياتنا</h2><div class="gold-rule"></div>
+          <p class="muted" id="memories-note"></p>
+          <ul class="gallery" id="gallery"></ul>
+        </div>
+      </section>
+
+      <section id="letters" class="section">
+        <div class="wrap narrow">
+          <div class="reveal"><p class="eyebrow" dir="ltr">Love Letters</p><h2>رسائل الحب</h2><div class="gold-rule"></div><p class="muted">اضغطي على أي ظرف عشان تفتحيه.</p></div>
+          <div class="env-grid two" id="env-featured"></div>
+          <h3 class="rose-text reveal" style="margin-top:5rem">رسائل صغيرة</h3>
+          <div class="env-grid three" id="env-short"></div>
+          <div class="env-grid two" id="env-future" style="margin-top:5rem"></div>
+        </div>
+      </section>
+
+      <section id="birthday" class="section bday">
+        <div class="wrap narrow reveal">
+          <p class="eyebrow" dir="ltr">Birthday</p>
+          <h2 class="display bday-title" dir="ltr" lang="en" id="bday-heading"></h2>
+          <div class="gold-rule"></div>
+          <p class="lead" id="bday-message"></p>
+
+          <div id="countdown-wrap" class="countdown-wrap">
+            <p class="muted" id="count-intro"></p>
+            <div class="count-row" dir="ltr" role="timer" aria-live="off" id="count-row">
+              <div class="count-box"><span class="count-num" id="c-days">--</span><span class="count-label">Days</span><span class="small muted" dir="rtl">أيام</span></div>
+              <div class="count-box"><span class="count-num" id="c-hours">--</span><span class="count-label">Hours</span><span class="small muted" dir="rtl">ساعات</span></div>
+              <div class="count-box"><span class="count-num" id="c-minutes">--</span><span class="count-label">Minutes</span><span class="small muted" dir="rtl">دقايق</span></div>
+              <div class="count-box"><span class="count-num" id="c-seconds">--</span><span class="count-label">Seconds</span><span class="small muted" dir="rtl">ثواني</span></div>
+            </div>
+          </div>
+          <div id="arrived" class="card arrived" hidden><p class="arrived-title" id="arrived-title"></p><p id="arrived-text"></p></div>
+
+          <button type="button" class="gift-btn" id="gift-btn" aria-expanded="false">
+            <span class="gift" id="gift" aria-hidden="true"><span class="gift-box"></span><span class="gift-lid"></span><span class="gift-bow"></span></span>
+            <span class="display gift-title" dir="ltr" lang="en" id="gift-title"></span>
+            <span class="small muted" id="gift-hint"></span>
+          </button>
+          <div id="gift-content" class="card gift-content" hidden>
+            <div id="gift-text"></div>
+            <ul class="gift-photos" id="gift-photos"></ul>
+            <div class="btn-row">
+              <button type="button" class="btn-ghost" id="fx-toggle" aria-pressed="true">إيقاف المؤثرات</button>
+              <button type="button" class="btn-ghost" id="fx-again">مرة كمان</button>
+              <button type="button" class="btn-ghost" id="gift-close">اقفلي الهدية</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="future" class="section">
+        <div class="wrap narrow">
+          <div class="reveal"><p class="eyebrow" dir="ltr">Our Future</p><h2>مستقبلنا</h2><div class="gold-rule"></div></div>
+          <ul class="future-grid" id="future-grid"></ul>
+          <p class="closing reveal" id="future-closing"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="gold-rule"></div>
+      <p class="display muted" dir="ltr" lang="en"><em>Our Story, still being written.</em></p>
+      <button type="button" class="btn-ghost" id="lock-btn">قفل الباب</button>
+    </footer>
+
+    <div class="dock">
+      <button type="button" class="icon-btn" id="motion-btn" aria-pressed="false" aria-label="تقليل الحركة" title="تقليل الحركة">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M3 12c3-6 6-6 9 0s6 6 9 0"/></svg>
+      </button>
+      <div class="player">
+        <button type="button" class="icon-btn" id="play-btn" aria-label="تشغيل الموسيقى" aria-pressed="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path id="play-icon" d="M8 5.5v13l11-6.5z"/></svg>
+        </button>
+        <input type="range" id="volume" min="0" max="1" step="0.05" value="0.5" aria-label="مستوى الصوت">
+        <p id="audio-hint" class="audio-hint" role="status" hidden></p>
+      </div>
+      <audio id="audio" loop preload="none"></audio>
+    </div>
+  </div>
+
+  <!-- نوافذ: الصور + الرسائل -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="عرض الصورة" hidden>
+    <div class="lb-top"><span class="display muted" dir="ltr" id="lb-count"></span><button type="button" class="icon-btn" id="lb-close" aria-label="إغلاق">✕</button></div>
+    <div class="lb-stage" id="lb-stage"><figure id="lb-figure"></figure></div>
+    <div class="lb-nav"><button type="button" class="icon-btn" id="lb-prev" aria-label="الصورة السابقة">›</button><button type="button" class="icon-btn" id="lb-next" aria-label="الصورة التالية">‹</button></div>
+  </div>
+
+  <div id="letter-modal" class="lightbox letter-modal" role="dialog" aria-modal="true" hidden>
+    <button type="button" class="icon-btn lm-close" id="lm-close" aria-label="إغلاق الرسالة">✕</button>
+    <button type="button" class="env-stage" id="lm-env" aria-label="فتح الرسالة"><span class="env-art"><span class="env-paper-peek"></span><span class="env-flap"></span><span class="env-seal"></span></span></button>
+    <article class="paper" id="lm-paper" hidden></article>
+  </div>
+
+  <canvas id="confetti" class="confetti-canvas" aria-hidden="true"></canvas>
+
+  <noscript><p style="position:relative;padding:2rem;text-align:center">الموقع محتاج JavaScript يكون شغال.</p></noscript>
+
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

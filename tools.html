@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>أداة بصمة التاريخ</title>
+<style>body{font-family:system-ui,Tahoma,sans-serif;max-width:34rem;margin:3rem auto;padding:0 1rem;line-height:1.9;background:#111;color:#eee}input,button{font-size:1.1rem;padding:.6rem 1rem;margin:.3rem 0}code{display:block;direction:ltr;word-break:break-all;background:#222;padding:.8rem;border-radius:.5rem}</style>
+</head>
+<body>
+<h1>أداة تغيير تاريخ الدخول</h1>
+<p>اكتبي التاريخ الجديد (يوم/شهر/سنة)، وانسخي البصمة في <code style="display:inline;padding:.1rem .4rem">js/config.js</code> مكان <code style="display:inline;padding:.1rem .4rem">gateHash</code>. احذفي الملف ده قبل النشر.</p>
+<input id="d" dir="ltr" placeholder="07/12/2024"> <button id="b">احسبي</button>
+<code id="out"></code>
+<script src="js/config.js"></script><script src="js/utils.js"></script>
+<script>
+document.getElementById("b").onclick=function(){
+  var iso=OSU.parseDate(document.getElementById("d").value);
+  document.getElementById("out").textContent=iso?OS.gateSalt?OSU.sha256(OS.gateSalt+iso):"":"تاريخ غير صالح";
+};
+</script>
+</body></html>
